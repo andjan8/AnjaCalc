@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Archive>
+  <Name>AnjaCalc.Droid</Name>
+  <PackageName>AnjaCalc.Droid</PackageName>
+  <PackageVersionCode>1</PackageVersionCode>
+  <PackageVersionName>1.0</PackageVersionName>
+  <CreationDate>636188742700599900</CreationDate>
+  <SolutionName>AnjaCalc</SolutionName>
+  <SolutionPath>C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc.sln</SolutionPath>
+  <Status></Status>
+  <Configuration>
+    <DebugMode>false</DebugMode>
+  </Configuration>
+</Archive>

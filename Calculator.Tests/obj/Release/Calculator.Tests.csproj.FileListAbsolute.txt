@@ -1,0 +1,8 @@
+C:\dev\Xamarin.Forms\Calculator\AnjaCalc\Calculator.Tests\bin\Release\Calculator.Tests.dll
+C:\dev\Xamarin.Forms\Calculator\AnjaCalc\Calculator.Tests\bin\Release\Calculator.Tests.pdb
+C:\dev\Xamarin.Forms\Calculator\AnjaCalc\Calculator.Tests\bin\Release\Calculator.dll
+C:\dev\Xamarin.Forms\Calculator\AnjaCalc\Calculator.Tests\bin\Release\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\dev\Xamarin.Forms\Calculator\AnjaCalc\Calculator.Tests\bin\Release\Calculator.pdb
+C:\dev\Xamarin.Forms\Calculator\AnjaCalc\Calculator.Tests\obj\Release\Calculator.Tests.csprojResolveAssemblyReference.cache
+C:\dev\Xamarin.Forms\Calculator\AnjaCalc\Calculator.Tests\obj\Release\Calculator.Tests.dll
+C:\dev\Xamarin.Forms\Calculator\AnjaCalc\Calculator.Tests\obj\Release\Calculator.Tests.pdb

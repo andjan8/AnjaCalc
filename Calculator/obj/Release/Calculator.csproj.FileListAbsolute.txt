@@ -1,0 +1,15 @@
+C:\dev\Xamarin.Forms\Calculator\AnjaCalc\Calculator\bin\Release\Calculator.dll
+C:\dev\Xamarin.Forms\Calculator\AnjaCalc\Calculator\bin\Release\Calculator.pdb
+C:\dev\Xamarin.Forms\Calculator\AnjaCalc\Calculator\bin\Release\Xamarin.Forms.Core.dll
+C:\dev\Xamarin.Forms\Calculator\AnjaCalc\Calculator\bin\Release\Xamarin.Forms.Platform.dll
+C:\dev\Xamarin.Forms\Calculator\AnjaCalc\Calculator\bin\Release\Xamarin.Forms.Xaml.dll
+C:\dev\Xamarin.Forms\Calculator\AnjaCalc\Calculator\bin\Release\Xamarin.Forms.Core.pdb
+C:\dev\Xamarin.Forms\Calculator\AnjaCalc\Calculator\bin\Release\Xamarin.Forms.Core.xml
+C:\dev\Xamarin.Forms\Calculator\AnjaCalc\Calculator\bin\Release\Xamarin.Forms.Platform.pdb
+C:\dev\Xamarin.Forms\Calculator\AnjaCalc\Calculator\bin\Release\Xamarin.Forms.Xaml.pdb
+C:\dev\Xamarin.Forms\Calculator\AnjaCalc\Calculator\bin\Release\Xamarin.Forms.Xaml.xml
+C:\dev\Xamarin.Forms\Calculator\AnjaCalc\Calculator\obj\Release\Calculator.csprojResolveAssemblyReference.cache
+C:\dev\Xamarin.Forms\Calculator\AnjaCalc\Calculator\obj\Release\Calculator.dll
+C:\dev\Xamarin.Forms\Calculator\AnjaCalc\Calculator\obj\Release\Calculator.pdb
+C:\dev\Xamarin.Forms\Calculator\AnjaCalc\Calculator\obj\Release\Calculator.dll.mdb
+C:\dev\Xamarin.Forms\Calculator\AnjaCalc\Calculator\bin\Release\Calculator.dll.mdb

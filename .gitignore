@@ -13,7 +13,14 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
-
+*.dll
+*.zip
+*.apk
+*.mbd
+*.mdb
+*.class
+*.java
+*.pdb
 # Windows shortcuts
 *.lnk
 
