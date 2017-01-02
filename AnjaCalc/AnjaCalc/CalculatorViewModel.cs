@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Calculator;
-using AnjaCalc.Commands;
+
 
 namespace AnjaCalc
 {

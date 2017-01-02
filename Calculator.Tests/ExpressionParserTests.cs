@@ -91,7 +91,7 @@ namespace Calculator.Tests
             {
                 for (int j = 1; j <= 10; j++)
                 {
-                    var expectedResult = i / j;
+                    var expectedResult = (double)i / (double)j;
                     var expression = i.ToString() + "/" + j.ToString();
          
                     double result = p.Parse(expression);
@@ -100,11 +100,12 @@ namespace Calculator.Tests
             }
         }
 
-        [ExpectedException(typeof(DivideByZeroException))]
+      
         [TestMethod]
         public void HandlesDivisionWithZero()
         {
             double result = p.Parse("10/0");
+            Assert.IsTrue(double.IsInfinity(result));
         }
 
         [TestMethod]

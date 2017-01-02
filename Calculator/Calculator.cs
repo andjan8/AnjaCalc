@@ -64,7 +64,23 @@ namespace Calculator
             try
             {
                 double result = parser.Parse(this.Expression.Replace(" ", ""));
-                this.Expression = result.ToString();
+                if (double.IsInfinity(result))
+                {
+                    this.Expression = "Infinity";
+                }
+                else
+                {
+                    int nrOfDecimals = BitConverter.GetBytes(decimal.GetBits((Decimal)result)[3])[2];
+                    if (nrOfDecimals < 8)
+                    {
+                        this.Expression = result.ToString(string.Format("N{0}", nrOfDecimals)).Replace(",", " ");
+                    }
+                    else
+                    {
+                        this.Expression = result.ToString("N8").Replace(",", " ");
+                    }
+                }
+                
             }
             catch (DivideByZeroException)
             {

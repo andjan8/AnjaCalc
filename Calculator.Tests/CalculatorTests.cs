@@ -91,21 +91,21 @@ namespace Calculator.Tests
             Assert.AreEqual(string.Empty, calculator.Expression);
         }
 
-        //[TestMethod]
-        //public void CanCalculate()
-        //{
-        //    calculator.Append(1);
-        //    calculator.Append(0);
-        //    calculator.Append(0);
-        //    calculator.Append(0);
-        //    calculator.Append(Operators.Multiply);
-        //    calculator.Append(1);
-        //    calculator.Append(0);
-        //    calculator.Append(0);
-        //    calculator.Append(0);
-        //    calculator.Calculate();
-        //    Assert.AreEqual("1 000 000", calculator.Expression);
-        //}
+        [TestMethod]
+        public void CanCalculate()
+        {
+            calculator.Append(1);
+            calculator.Append(0);
+            calculator.Append(0);
+            calculator.Append(0);
+            calculator.Append(Operators.Multiply);
+            calculator.Append(1);
+            calculator.Append(0);
+            calculator.Append(0);
+            calculator.Append(0);
+            calculator.Calculate();
+            Assert.AreEqual("1 000 000", calculator.Expression);
+        }
 
     }
 }

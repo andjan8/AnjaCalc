@@ -13,15 +13,3 @@ C:\dev\Xamarin.Forms\Calculator\AnjaCalc\Calculator\obj\Debug\Calculator.pdb
 C:\dev\Xamarin.Forms\Calculator\AnjaCalc\Calculator\obj\Debug\Calculator.csprojResolveAssemblyReference.cache
 C:\dev\Xamarin.Forms\Calculator\AnjaCalc\Calculator\obj\Debug\Calculator.dll.mdb
 C:\dev\Xamarin.Forms\Calculator\AnjaCalc\Calculator\bin\Debug\Calculator.dll.mdb
-C:\dev\Xamarin.Forms\Calculator\AnjaCalc\Calculator\obj\Debug\Calculator.dll.mdb
-C:\dev\Xamarin.Forms\Calculator\AnjaCalc\Calculator\bin\Debug\Calculator.dll.mdb
-C:\dev\Xamarin.Forms\Calculator\AnjaCalc\Calculator\obj\Debug\Calculator.dll.mdb
-C:\dev\Xamarin.Forms\Calculator\AnjaCalc\Calculator\bin\Debug\Calculator.dll.mdb
-C:\dev\Xamarin.Forms\Calculator\AnjaCalc\Calculator\obj\Debug\Calculator.dll.mdb
-C:\dev\Xamarin.Forms\Calculator\AnjaCalc\Calculator\bin\Debug\Calculator.dll.mdb
-C:\dev\Xamarin.Forms\Calculator\AnjaCalc\Calculator\obj\Debug\Calculator.dll.mdb
-C:\dev\Xamarin.Forms\Calculator\AnjaCalc\Calculator\bin\Debug\Calculator.dll.mdb
-C:\dev\Xamarin.Forms\Calculator\AnjaCalc\Calculator\obj\Debug\Calculator.dll.mdb
-C:\dev\Xamarin.Forms\Calculator\AnjaCalc\Calculator\bin\Debug\Calculator.dll.mdb
-C:\dev\Xamarin.Forms\Calculator\AnjaCalc\Calculator\obj\Debug\Calculator.dll.mdb
-C:\dev\Xamarin.Forms\Calculator\AnjaCalc\Calculator\bin\Debug\Calculator.dll.mdb
