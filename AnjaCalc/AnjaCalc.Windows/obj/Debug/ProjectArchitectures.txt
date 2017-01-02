@@ -1,3 +1,0 @@
-C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Windows\AnjaCalc.Windows.csproj;neutral
-C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc\AnjaCalc.csproj;neutral
-C:\dev\Xamarin.Forms\Calculator\AnjaCalc\Calculator\Calculator.csproj;neutral

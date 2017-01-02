@@ -14,9 +14,7 @@ C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\bin\Release\Xam
 C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\bin\Release\Xamarin.Forms.Platform.Android.dll
 C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\bin\Release\Xamarin.Forms.Platform.dll
 C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\bin\Release\Xamarin.Forms.Xaml.dll
-C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\bin\Release\Calculator.dll
 C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\bin\Release\AnjaCalc.pdb
-C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\bin\Release\AnjaCalc.dll.mdb
 C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\bin\Release\FormsViewGroup.pdb
 C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\bin\Release\FormsViewGroup.dll.mdb
 C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\bin\Release\Xamarin.Forms.Core.pdb
@@ -27,7 +25,6 @@ C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\bin\Release\Xam
 C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\bin\Release\Xamarin.Forms.Xaml.pdb
 C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\bin\Release\Xamarin.Forms.Xaml.xml
 C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\bin\Release\Xamarin.Forms.Xaml.dll.mdb
-C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\bin\Release\Calculator.pdb
 C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\obj\Release\AnjaCalc.Droid.csprojResolveAssemblyReference.cache
 C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\obj\Release\AnjaCalc.Droid.dll
 C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\obj\Release\AnjaCalc.Droid.pdb
@@ -42,6 +39,7 @@ C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\obj\Release\res
 C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\obj\Release\R.cs.flag
 C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\obj\Release\uploadflags.txt
 C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\bin\Release\AnjaCalc.Droid.dll.mdb
+C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\bin\Release\AnjaCalc.dll.mdb
 C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\bin\Release\Calculator.dll.mdb
 C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\bin\Release\Java.Interop.dll.mdb
 C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\bin\Release\Mono.Android.dll.mdb
@@ -70,5 +68,7 @@ C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\obj\Release\and
 C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\obj\Release\android\assets\Xamarin.Forms.Core.dll.mdb
 C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\obj\Release\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
 C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\obj\Release\android\assets\Xamarin.Forms.Xaml.dll.mdb
+C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\bin\Release\Calculator.dll
+C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\bin\Release\Calculator.pdb
 C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\obj\Release\AnjaCalc.Droid.dll.mdb
 C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\bin\Release\AnjaCalc.Droid.dll.mdb

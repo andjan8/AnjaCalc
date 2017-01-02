@@ -14,6 +14,7 @@ namespace Calculator
         Divide,
         LeftParanthesis,
         RightParanthesis,
-        Comma
+        Comma,
+        Unknown
     }
 }

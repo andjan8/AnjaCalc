@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Calculator;
+using AnjaCalc.Commands;
 
 namespace AnjaCalc
 {
+
     public class CalculatorViewModel : ViewModelBase
     {
         string display = "";
@@ -18,7 +20,8 @@ namespace AnjaCalc
         public string Display
         {
             private set { SetProperty(ref display, value); }
-            get { return display; } }
+            get { return display; }
+        }
         private Calculator.Calculator _calculator;
         private Calculator.Calculator Calculator
         {
@@ -31,38 +34,79 @@ namespace AnjaCalc
                 return _calculator;
             }
         }
+        private Command<Operators> operatorCommand;
+        private Command<string> numericCommand;
+        private Command deleteCommand;
+        private Command calculateCommand;
 
-        public ICommand NumericCommand { get; private set; }
-        public ICommand LeftParanthesisCommand { get; private set; }
-        public ICommand RightParanthesisCommand { get; private set; }
-        public ICommand BackspaceCommand { get; private set; }
-        public ICommand ClearDisplayCommand { get; private set; }
-        public ICommand PlusCommand { get; private set; }
-        public ICommand MinusCommand { get; private set; }
-        public ICommand MultiplyCommand { get; private set; }
-        public ICommand CommaCommand { get; private set; }
-        public ICommand DivisionCommand { get; private set; }
-        public ICommand CalculateCommand { get; private set; }
-
-        public CalculatorViewModel()
+        public ICommand NumericCommand
         {
-            _calculator = new Calculator.Calculator();
-            SetUpNumericCommand();
-            SetUpParenthesisCommands();
-            SetUpBackspaceCommand();
-            SetUpClearDisplayCommand();
-            SetUpPlusCommand();
-            SetUpSubtractCommand();
-            SetUpMultiplyCommand();
-            SetUpCommaCommand();
-            SetUpDivisionCommand();
-            SetUpCalculateCommand();
-
+            get
+            {
+                if (numericCommand == null)
+                {
+                    numericCommand = new Command<string>(
+                 execute: (string parameter) =>
+                 {
+                     int numberPressed = Convert.ToInt32(parameter);
+                     Append(numberPressed);
+                 },
+                  canExecute: (string parameter) =>
+                  {
+                      return CanAddToExpression();
+                  });
+                }
+                return numericCommand;
+            }
         }
-
-        private void SetUpCalculateCommand()
+        public ICommand OperatorCommand
         {
-            CalculateCommand = new Command(
+            get
+            {
+                if (operatorCommand == null)
+                {
+                    operatorCommand = new Command<Operators>(
+                        execute: (Operators _operator) =>
+                        {
+                            Append(_operator);
+                        },
+                        canExecute: (Operators parameter) =>
+                        {
+                            return CanExecute(parameter);
+                        });
+                }
+                return operatorCommand;
+            }
+        }
+        public ICommand DeleteCommand
+        {
+            get
+            {
+                if (deleteCommand == null)
+                {
+                    deleteCommand = new Command(
+                        execute: () =>
+                        {
+                            answerShowing = false;
+                            Calculator.Erase();
+                            Display = Calculator.Expression;
+                            RefreshCanExecutes();
+                        },
+                        canExecute: () =>
+                        {
+                            return Calculator.Expression.Length > 0;
+                        });
+                }
+                return deleteCommand;
+            }
+        }
+        public ICommand CalculateCommand
+        {
+            get
+            {
+                if (calculateCommand == null)
+                {
+                    calculateCommand = new Command(
                             execute: () =>
                             {
                                 answerShowing = true;
@@ -70,195 +114,77 @@ namespace AnjaCalc
                                 Display = Calculator.Expression;
                                 RefreshCanExecutes();
                             },
-                            canExecute: () => { return Calculator.Expression.Length > 0; });
-        }
-
-        private void SetUpDivisionCommand()
-        {
-            DivisionCommand = new Command(
-                execute: () =>
-                {
-                    answerShowing = false;
-                    Calculator.Append(Operators.Divide);
-                    Display = Calculator.Expression;
-                    RefreshCanExecutes();
-                },
-                canExecute: () => { return Calculator.Expression.Length > 0 && !operatorCharacters.Contains(Calculator.Expression[Calculator.Expression.Length - 1].ToString()) ? CanAddToExpression() : false; });
-        }
-
-        private void SetUpCommaCommand()
-        {
-            CommaCommand = new Command(
-                            execute: () =>
+                            canExecute: () =>
                             {
-                                if (answerShowing)
-                                {
-                                    answerShowing = false;
-                                    Calculator.Clear();
-                                }
-
-                                Calculator.Append(Operators.Comma);
-                                Display = Calculator.Expression;
-                                RefreshCanExecutes();
-                            },
-                            canExecute: () => { return Calculator.Expression.Length > 0 && !operatorCharacters.Contains(Calculator.Expression[Calculator.Expression.Length - 1].ToString()) ? CanAddToExpression() : false; });
-        }
-
-        private void SetUpMultiplyCommand()
-        {
-            MultiplyCommand = new Command(
-                            execute: () =>
-                            {
-                                answerShowing = false;
-                                Calculator.Append(Operators.Multiply);
-                                Display = Calculator.Expression;
-                                RefreshCanExecutes();
-                            },
-                            canExecute: () => { return Calculator.Expression.Length > 0 && !operatorCharacters.Contains(Calculator.Expression[Calculator.Expression.Length - 1].ToString()) ? CanAddToExpression() : false; });
-        }
-
-        private void SetUpSubtractCommand()
-        {
-            MinusCommand = new Command(
-                            execute: () =>
-                            {
-                                answerShowing = false;
-                                Calculator.Append(Operators.Subtract);
-                                Display = Calculator.Expression;
-                                RefreshCanExecutes();
-                            },
-                            canExecute: () => { return CanAddToExpression(); });
-        }
-
-        private void SetUpPlusCommand()
-        {
-            PlusCommand = new Command(
-                            execute: () =>
-                            {
-                                answerShowing = false;
-                                Calculator.Append(Operators.Add);
-                                Display = Calculator.Expression;
-                                RefreshCanExecutes();
-                            },
-                            canExecute: () => {
-
-                                return TempCanAdd();
+                                return Calculator.Expression.Length > 0;
                             });
-        }
-
-        public bool TempCanAdd()
-        {
-            return Calculator.Expression.Length > 0 && !operatorCharacters.Contains(Calculator.Expression[Calculator.Expression.Length - 1].ToString()) ? CanAddToExpression() : false;
-        }
-
-        private void SetUpClearDisplayCommand()
-        {
-            ClearDisplayCommand = new Command(
-                            execute: () =>
-                            {
-                                answerShowing = false;
-                                Calculator.Clear();
-                                Display = Calculator.Expression;
-                                RefreshCanExecutes();
-                            },
-                            canExecute: () => { return Calculator.Expression.Length > 0; });
-        }
-
-        private void SetUpBackspaceCommand()
-        {
-            BackspaceCommand = new Command(
-                            execute: () =>
-                            {
-                                answerShowing = false;
-                                Calculator.Erase();
-                                Display = Calculator.Expression;
-                                RefreshCanExecutes();
-                            },
-                            canExecute: () => { return Calculator.Expression.Length > 0; });
-        }
-
-        private void SetUpParenthesisCommands()
-        {
-            LeftParanthesisCommand = new Command(
-                execute: () => {
-                    if (answerShowing)
-                    {
-                        answerShowing = false;
-                        Calculator.Clear();
-                        Display = Calculator.Expression;
-                    }
-                    Calculator.Append(Operators.LeftParanthesis);
-                    Display = Calculator.Expression;
-                },
-                canExecute: () => {
-                    return CanAddToExpression();
-                });
-
-
-            RightParanthesisCommand = new Command(
-            execute: () => {
-                if (answerShowing)
-                {
-                    answerShowing = false;
-                    Calculator.Clear();
-                    Display = Calculator.Expression;
                 }
-                Calculator.Append(Operators.RightParanthesis);
-                Display = Calculator.Expression;
-            },
-            canExecute: () => {
+                return calculateCommand;
+            }
+        }
+
+        public CalculatorViewModel()
+        {
+            _calculator = new Calculator.Calculator();
+        }
+        
+        private bool CanExecute(Operators parameter)
+        {
+            if(parameter == Operators.Unknown)
+            { return false; }
+            else if (parameter != Operators.RightParanthesis)
+            {
+                return Calculator.Expression.Length > 0 && !operatorCharacters.Contains(Calculator.Expression[Calculator.Expression.Length - 1].ToString()) ? CanAddToExpression() : false;
+            }
+            else if (parameter == Operators.RightParanthesis)
+            {
                 int numberOfOpeningParenthesis = Calculator.Expression.ToCharArray().Where(c => c == '(').Count();
                 int numberOfClosingParenthesis = Calculator.Expression.ToCharArray().Where(c => c == ')').Count();
                 return numberOfOpeningParenthesis > numberOfClosingParenthesis ? CanAddToExpression() : false;
-            });
+            }
+            else
+            {
+                return false;
+            }
         }
 
-        private void SetUpNumericCommand()
+        public void RefreshCanExecutes()
         {
-            NumericCommand = new Command<string>(
-                execute: (string parameter) =>
-                {
-                    int numericValue = Convert.ToInt32(parameter);
-                    if (answerShowing)
-                    {
-                        answerShowing = false;
-                        Calculator.Clear();
-                    }
-
-                    Calculator.Append(numericValue);
-                    Display = Calculator.Expression;
-                    RefreshCanExecutes();
-                    
-                },
-                canExecute: (string parameter) =>
-                {
-                    return CanAddToExpression();
-                });
+            ((Command)NumericCommand).ChangeCanExecute();
+            ((Command)OperatorCommand).ChangeCanExecute();
+            ((Command)DeleteCommand).ChangeCanExecute();
+            ((Command)CalculateCommand).ChangeCanExecute();
         }
 
         private bool CanAddToExpression()
         {
-            return !(Calculator.Expression.Length >= maxDisplayLength);
+            return !(Calculator.Expression.Length > this.maxDisplayLength);
         }
 
-        void RefreshCanExecutes()
+        private void Append(Operators _operator)
         {
-            ((Command)NumericCommand).ChangeCanExecute();
-            ((Command)LeftParanthesisCommand).ChangeCanExecute();
-            ((Command)RightParanthesisCommand).ChangeCanExecute();
-            ((Command)BackspaceCommand).ChangeCanExecute();
-            ((Command)ClearDisplayCommand).ChangeCanExecute();
-            ((Command)PlusCommand).ChangeCanExecute();
-            ((Command)MinusCommand).ChangeCanExecute();
-            ((Command)MultiplyCommand).ChangeCanExecute();
-            ((Command)CommaCommand).ChangeCanExecute();
-            ((Command)DivisionCommand).ChangeCanExecute();
-            ((Command)CalculateCommand).ChangeCanExecute();
+            answerShowing = false;
+            Calculator.Append(_operator);
+            Display = Calculator.Expression;
+            RefreshCanExecutes();
+        }
+
+        private void Append(int numberPressed)
+        {
+            if (answerShowing)
+            {
+                answerShowing = false;
+                Calculator.Clear();
+            }
+            Calculator.Append(numberPressed);
+            this.Display = Calculator.Expression;
+            RefreshCanExecutes();
         }
         
         public void SaveState(IDictionary<string, object> dictionary)
         {
             dictionary["Display"] = Display;
+
         }
 
         public void RestoreState(IDictionary<string, object> dictionary)
@@ -277,3 +203,4 @@ namespace AnjaCalc
         }
     }
 }
+

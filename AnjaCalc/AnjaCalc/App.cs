@@ -12,9 +12,9 @@ namespace AnjaCalc
         CalculatorViewModel viewModel;
         public App()
         {
-           viewModel = new CalculatorViewModel();
-           viewModel.RestoreState(Current.Properties);
-           MainPage = new BasicCalculatorPage(viewModel);
+            viewModel = new CalculatorViewModel();
+            viewModel.RestoreState(Current.Properties);
+            MainPage = new CalculatorPage(viewModel);
         }
 
         protected override void OnStart()
