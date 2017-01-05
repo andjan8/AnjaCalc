@@ -12,7 +12,10 @@ C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc\bin\Debug\Xamarin.For
 C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc\bin\Debug\Xamarin.Forms.Xaml.xml
 C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc\obj\Debug\AnjaCalc.csprojResolveAssemblyReference.cache
 C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc\obj\Debug\AnjaCalc.CalculatorPage.xaml.g.cs
+C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc\obj\Debug\AnjaCalc.HistoryPage.xaml.g.cs
 C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc\obj\Debug\AnjaCalc.dll
 C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc\obj\Debug\AnjaCalc.pdb
+C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc\obj\Debug\AnjaCalc.dll.mdb
+C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc\bin\Debug\AnjaCalc.dll.mdb
 C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc\obj\Debug\AnjaCalc.dll.mdb
 C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc\bin\Debug\AnjaCalc.dll.mdb

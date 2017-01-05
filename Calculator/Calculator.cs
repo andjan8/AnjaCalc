@@ -8,7 +8,10 @@ namespace Calculator
 {
     public class Calculator : ICalculator
     {
-        public string Expression { get; private set; }
+        public Expression CurrentExpression { get; set; }
+        public List<Expression> ExpressionHistory { get; set; }
+        
+
         private Dictionary<Operators, string> _operatorDictionary;
         private ExpressionParser parser;
 
@@ -16,7 +19,18 @@ namespace Calculator
         {
             SetUpOperatorDictionary();
             parser = new ExpressionParser();
-            this.Expression = string.Empty;
+            this.CurrentExpression = new Expression();
+            this.ExpressionHistory = new List<Expression>();
+
+
+            for (int i = 1; i <= 10; i++)
+            {
+                var expression = new Expression();
+                expression.FullExpression = string.Format("{0} + {1} = {2}", i, i, i + i);
+                expression.Text = string.Format("{0} + {1}", i, i);
+                ExpressionHistory.Add(expression);
+            }
+
         }
 
         private void SetUpOperatorDictionary()
@@ -31,65 +45,48 @@ namespace Calculator
             _operatorDictionary.Add(Operators.Comma, ".");
         }
 
+        public void RemoveFromHistory(Expression e)
+        {
+            this.ExpressionHistory.Remove(e);
+        }
+
         public void Append(int numericValue)
         {
-            Expression = Format(Expression + numericValue.ToString());
+            CurrentExpression.Append(numericValue.ToString());
         }
 
         public void Append(Operators _operator)
         {
-            Expression = Format(Expression + _operatorDictionary[_operator]);
+            CurrentExpression.Append(_operatorDictionary[_operator]);
         }
 
         public void Erase()
         {
-            var tempExpression = Expression.Replace(" ", "");
-            tempExpression = tempExpression.Substring(0, tempExpression.Length - 1);
-            Expression = Format(tempExpression);
-
-        }
-
-        private string Format(string _expression)
-        {
-            return _expression.Replace(" ", "").Trim().Replace("+", " + ").Replace("-", " - ");
+            CurrentExpression.Erase();
         }
 
         public void Clear()
         {
-            this.Expression = string.Empty;
+            CurrentExpression = new Expression();
         }
 
         public void Calculate()
         {
             try
             {
-                double result = parser.Parse(this.Expression.Replace(" ", ""));
-                if (double.IsInfinity(result))
-                {
-                    this.Expression = "Infinity";
-                }
-                else
-                {
-                    int nrOfDecimals = BitConverter.GetBytes(decimal.GetBits((Decimal)result)[3])[2];
-                    if (nrOfDecimals < 8)
-                    {
-                        this.Expression = result.ToString(string.Format("N{0}", nrOfDecimals)).Replace(",", " ");
-                    }
-                    else
-                    {
-                        this.Expression = result.ToString("N8").Replace(",", " ");
-                    }
-                }
-                
+                double result = parser.Parse(this.CurrentExpression.Text.Replace(" ", ""));
+                CurrentExpression.SetResult(result);
             }
             catch (DivideByZeroException)
             {
-                this.Expression = "NaN";
+                CurrentExpression.SetResult("NaN");
             }
             catch (Exception)
             {
-                this.Expression = "Err";
+                CurrentExpression.SetResult("Err");
             }
+
+            this.ExpressionHistory.Add(CurrentExpression);
 
         }
     }

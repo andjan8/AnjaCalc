@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Calculator;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,18 @@ namespace AnjaCalc
         {
             InitializeComponent();
             BindingContext = viewModel;
+        }
+
+        public void OnAboutToolbarItemClicked(object sender, EventArgs args)
+        {
+        }
+
+        public async void OnHistoryToolbarItemClicked(object sender, EventArgs e)
+        {
+            
+            var historyPage = new HistoryPage((CalculatorViewModel)this.BindingContext);
+            await Navigation.PushAsync(historyPage);
+         
         }
 
         protected override void OnSizeAllocated(double width, double height)

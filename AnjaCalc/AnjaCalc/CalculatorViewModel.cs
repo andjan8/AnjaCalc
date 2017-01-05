@@ -34,6 +34,24 @@ namespace AnjaCalc
                 return _calculator;
             }
         }
+
+        internal List<Expression> GetHistory()
+        {
+            return Calculator.ExpressionHistory;
+        }
+
+        internal void SetExpression(Expression selectedHistoryExpression)
+        {
+            Calculator.CurrentExpression = selectedHistoryExpression;
+            Display = Calculator.CurrentExpression.Text;
+            RefreshCanExecutes();
+        }
+
+        internal void DeleteExpression(Expression e)
+        {
+            Calculator.RemoveFromHistory(e);
+        }
+
         private Command<Operators> operatorCommand;
         private Command<string> numericCommand;
         private Command deleteCommand;
@@ -89,12 +107,12 @@ namespace AnjaCalc
                         {
                             answerShowing = false;
                             Calculator.Erase();
-                            Display = Calculator.Expression;
+                            Display = Calculator.CurrentExpression.Text;
                             RefreshCanExecutes();
                         },
                         canExecute: () =>
                         {
-                            return Calculator.Expression.Length > 0;
+                            return Calculator.CurrentExpression.Text.Length > 0;
                         });
                 }
                 return deleteCommand;
@@ -111,12 +129,12 @@ namespace AnjaCalc
                             {
                                 answerShowing = true;
                                 Calculator.Calculate();
-                                Display = Calculator.Expression;
+                                Display = Calculator.CurrentExpression.Text;
                                 RefreshCanExecutes();
                             },
                             canExecute: () =>
                             {
-                                return Calculator.Expression.Length > 0;
+                                return Calculator.CurrentExpression.Text.Length > 0;
                             });
                 }
                 return calculateCommand;
@@ -134,12 +152,12 @@ namespace AnjaCalc
             { return false; }
             else if (parameter != Operators.RightParanthesis)
             {
-                return Calculator.Expression.Length > 0 && !operatorCharacters.Contains(Calculator.Expression[Calculator.Expression.Length - 1].ToString()) ? CanAddToExpression() : false;
+                return Calculator.CurrentExpression.Text.Length > 0 && !operatorCharacters.Contains(Calculator.CurrentExpression.Text[Calculator.CurrentExpression.Text.Length - 1].ToString()) ? CanAddToExpression() : false;
             }
             else if (parameter == Operators.RightParanthesis)
             {
-                int numberOfOpeningParenthesis = Calculator.Expression.ToCharArray().Where(c => c == '(').Count();
-                int numberOfClosingParenthesis = Calculator.Expression.ToCharArray().Where(c => c == ')').Count();
+                int numberOfOpeningParenthesis = Calculator.CurrentExpression.Text.ToCharArray().Where(c => c == '(').Count();
+                int numberOfClosingParenthesis = Calculator.CurrentExpression.Text.ToCharArray().Where(c => c == ')').Count();
                 return numberOfOpeningParenthesis > numberOfClosingParenthesis ? CanAddToExpression() : false;
             }
             else
@@ -158,14 +176,14 @@ namespace AnjaCalc
 
         private bool CanAddToExpression()
         {
-            return !(Calculator.Expression.Length > this.maxDisplayLength);
+            return !(Calculator.CurrentExpression.Text.Length > this.maxDisplayLength);
         }
 
         private void Append(Operators _operator)
         {
             answerShowing = false;
             Calculator.Append(_operator);
-            Display = Calculator.Expression;
+            Display = Calculator.CurrentExpression.Text;
             RefreshCanExecutes();
         }
 
@@ -177,7 +195,7 @@ namespace AnjaCalc
                 Calculator.Clear();
             }
             Calculator.Append(numberPressed);
-            this.Display = Calculator.Expression;
+            this.Display = Calculator.CurrentExpression.Text;
             RefreshCanExecutes();
         }
         

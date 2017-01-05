@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AnjaCalc.HistoryPage"
+             BackgroundColor="#eee">
+  
+  <ContentPage.Content>
+    <ScrollView VerticalOptions="Fill" HorizontalOptions="Fill">
+      <ListView ItemsSource="{Binding HistoricalExpressions}">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <TextCell Text="{Binding FullExpression}">
+              <TextCell.ContextActions>
+                <MenuItem Text="Use"
+                          Command="{Binding UseExpressionCommand}" />
+                       
+                <MenuItem Text="Delete"
+                          Command="{Binding DeleteCommand}"/>
+              </TextCell.ContextActions>
+            </TextCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+    </ScrollView>
+  </ContentPage.Content>
+</ContentPage>

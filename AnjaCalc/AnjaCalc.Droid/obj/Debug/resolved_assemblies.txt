@@ -22,14 +22,14 @@ C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\obj\Debug\andro
 C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\obj\Debug\android\assets\System.ComponentModel.Composition.dll
 C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\obj\Debug\android\assets\System.Resources.ResourceManager.dll
 C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\obj\Debug\android\assets\System.Diagnostics.Tools.dll
-C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\obj\Debug\android\assets\Calculator.dll
 C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\obj\Debug\android\assets\System.Diagnostics.Debug.dll
+C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\obj\Debug\android\assets\System.Threading.Tasks.dll
+C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\obj\Debug\android\assets\Calculator.dll
 C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\obj\Debug\android\assets\System.Collections.dll
-C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\obj\Debug\android\assets\System.Linq.dll
 C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\obj\Debug\android\assets\System.Runtime.Extensions.dll
+C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\obj\Debug\android\assets\System.Linq.dll
 C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\obj\Debug\android\assets\System.ObjectModel.dll
 C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\obj\Debug\android\assets\System.Threading.dll
-C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\obj\Debug\android\assets\System.Threading.Tasks.dll
 C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\obj\Debug\android\assets\System.Globalization.dll
 C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\obj\Debug\android\assets\System.ComponentModel.dll
 C:\dev\Xamarin.Forms\Calculator\AnjaCalc\AnjaCalc\AnjaCalc.Droid\obj\Debug\android\assets\System.Xml.ReaderWriter.dll

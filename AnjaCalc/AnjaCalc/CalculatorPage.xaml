@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AnjaCalc.CalculatorPage"
              xmlns:calculator="clr-namespace:Calculator;assembly=Calculator"
-             BackgroundColor="#eee">
+             BackgroundColor="#eee"
+            Title="AnjaCalc">
 
   <ContentPage.Resources>
     <ResourceDictionary>
@@ -25,7 +26,18 @@
     </ResourceDictionary>
   </ContentPage.Resources>
   
-  <ContentPage.Content>
+ 
+  <ContentPage.ToolbarItems>
+    <ToolbarItem Text="History"
+                 Order="Secondary"
+                 Clicked="OnHistoryToolbarItemClicked" />
+      <ToolbarItem Text="About"
+                 Order="Secondary"
+                  Clicked="OnAboutToolbarItemClicked" /> 
+  </ContentPage.ToolbarItems>
+    
+  <ContentPage.Content> 
+    
     <Grid x:Name="calculatorGrid" RowSpacing="1" ColumnSpacing="1">
       
       <Grid.RowDefinitions>

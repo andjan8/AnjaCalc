@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Calculator.cs" />
+    <Compile Include="Expression.cs" />
     <Compile Include="ExpressionItemInterpreter.cs" />
     <Compile Include="ExpressionItemType.cs" />
     <Compile Include="ExpressionParser.cs" />

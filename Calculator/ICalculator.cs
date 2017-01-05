@@ -8,7 +8,9 @@ namespace Calculator
 {
     public interface ICalculator
     {
-        string Expression { get; }
+        Expression CurrentExpression { get; }
+        List<Expression> ExpressionHistory { get; set; }
+
         void Append(int numericValue);
         void Append(Operators _operator);
         void Erase();

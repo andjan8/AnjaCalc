@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Calculator;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,8 @@ namespace AnjaCalc
         {
             viewModel = new CalculatorViewModel();
             viewModel.RestoreState(Current.Properties);
-            MainPage = new CalculatorPage(viewModel);
+            CalculatorPage calculatorPage = new CalculatorPage(viewModel);
+            MainPage = new NavigationPage(calculatorPage);
         }
 
         protected override void OnStart()

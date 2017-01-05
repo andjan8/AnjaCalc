@@ -626,3 +626,4 @@ namespace AnjaCalc.WinPhone.AnjaCalc_WinPhone_XamlTypeInfo
 
 
 
+
