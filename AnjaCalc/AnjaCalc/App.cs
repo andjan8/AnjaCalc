@@ -8,6 +8,8 @@ using Xamarin.Forms;
 
 namespace AnjaCalc
 {
+
+    //asdöklfhasdoöuhasoduiöoasde
     public class App : Application
     {
         CalculatorViewModel viewModel;
